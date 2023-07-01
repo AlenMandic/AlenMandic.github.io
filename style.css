@@ -1,0 +1,484 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Fasthand-Regular';
+  src: url('/assets/fonts/Fasthand-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; 
+  }
+  100% {
+    opacity: 1; 
+  }
+}
+
+html {
+  background-color: black;
+}
+
+body {
+ padding: 0;
+ margin: 0;
+}
+
+h1 {
+  font-family: 'Fasthand-Regular', sans-serif;
+}
+
+#Thaddeus {
+font-size: 40px;
+}
+
+.blur {
+  filter: blur(4px);
+}
+
+.navbar {
+  opacity: 0;
+  animation: fade-in 1.9s ease-in forwards;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbar > ul {
+  height: 75px;
+  margin-top: 40px;
+  padding-right: 20px;
+  background-color: white;
+  color: black;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  gap: 2rem;
+}
+
+.navbar > ul > li {
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1);
+  font-size: 20px;
+  color: black;
+}
+
+.navbar > ul > li > a {
+ text-decoration: underline;
+ cursor: pointer;
+ color: black;
+}
+
+.navbar > ul > li > h1 {
+  cursor: default;
+  color: black;
+  padding-top: 0px;
+ }
+
+.navbar > ul > li:hover, 
+.navbar > ul > li:focus {
+  transform: scale(1.1);
+}
+
+.grid-container {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 385px);
+    grid-template-rows: repeat(3, 385px);
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.images {
+  position: relative;
+}
+
+.image {
+  opacity: 0;
+  animation: fade-in 2.3s ease-in forwards;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.5s ease-in-out;
+  transform: scale(1);
+}
+
+.image:focus,
+.image:hover {
+  z-index: 1;
+  transform: scale(1.6);
+}
+
+/* we add this to start the animation when in view using intersection observer */
+.fade-in {
+  opacity: 0;
+  animation: fade-in 3s ease-in forwards;
+}
+
+#about {
+  opacity: 0;
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to right, rgb(163, 180, 163), rgb(130, 130, 165));
+}
+
+.headshot {
+  width: 30%;
+  border-radius: 8px;
+}
+
+.mini {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  display: none;
+}
+
+.textual {
+  padding: 10px;
+  font-size: 18px;
+  width: 30%;
+  color: black;
+  border-radius: 8px;
+}
+
+.footer-ul {
+  font-size: 24px;
+  color: black;
+  list-style: none;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 15%;
+  height: 70px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.footer-ul > li > a {
+  color: black;
+}
+
+.footer-ul > li > p > a {
+  color: black;
+}
+
+.footer-ul > li {
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1);
+  font-size: 20px;
+  color: black;
+}
+
+.footer-ul > li:hover, 
+.footer-ul > li:focus {
+  transform: scale(1.1);
+}
+
+@media only screen and (max-width: 1350px) {
+ 
+  .navbar > ul {
+    height: 70px;
+   }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 450px);
+    grid-template-rows: repeat(2, 450px);
+    gap: 3rem;
+}
+
+.image {
+  height: 450px;
+  width: 450px;
+  border-radius: 8px;
+  transition: transform 0.5s ease-in-out;
+  transform: scale(1);
+}
+
+.image:focus,
+.image:hover {
+  transform: scale(1.4)
+}
+
+}
+
+@media only screen and (max-width: 990px) {
+
+  .navbar > ul {
+    height: 70px;
+   }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 380px);
+    grid-template-rows: repeat(2, 380px);
+    gap: 1.5rem;
+}
+
+.image {
+  height: 380px;
+  width: 380px;
+  border-radius: 8px;
+  transition: transform 0.5s ease-in-out;
+  transform: scale(1);
+}
+
+.image:focus,
+.image:hover {
+  transform: scale(1.3)
+}
+
+}
+
+@media only screen and (max-width: 800px) {
+
+  .navbar > ul {
+    margin-top: 100px;
+    height: 70px;
+  }
+
+  .grid-container {
+    margin-top: 100px;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: flex-start;
+    grid-template-columns: repeat(1, 320px);
+    grid-template-rows: repeat(1, 320px);
+    gap: 1rem;
+    margin-left: 50px;
+}
+
+.image {
+  height: 400px;
+  width: 320px;
+  border-radius: 8px;
+  transition: height 0.3s ease-in-out;
+  transform: scale(1);
+}
+
+.image:focus,
+.image:hover {
+  height: 500px;
+  transform: scale(1);
+}
+
+.about {
+  margin-top: 30px;
+}
+
+.headshot {
+  display: none;
+}
+
+.mini {
+  display: block;
+}
+
+.textual {
+  width: 80%;
+  font-size: 16px;
+}
+
+.footer-ul {
+  font-size: 20px;
+}
+
+.navbar > ul > li {
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1);
+}
+
+.navbar > ul > li:focus,
+.navbar > ul > li:hover {
+  transform: scale(1);
+}
+
+.navbar > ul > li:active {
+  transform: scale(0.8);
+}
+
+}
+
+@media only screen and (max-width: 595px) {
+
+ .navbar > ul {
+  height: 70px;
+ }
+
+ .navbar > ul > li {
+  font-size: 14px;
+  color: black;
+ }
+
+ .footer-ul {
+  font-size: 18px;
+}
+
+}
+
+@media only screen and (max-width: 550px) {
+
+  .navbar > ul {
+    height: 70px;
+   }
+
+   .navbar > ul > li {
+    color: black;
+   }
+
+  .grid-container {
+    margin-top: 100px;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: flex-start;
+    grid-template-columns: repeat(1, 320px);
+    grid-template-rows: repeat(1, 320px);
+    gap: 1rem;
+    margin-left: 50px;
+}
+
+.image {
+  height: 400px;
+  width: 320px;
+  border-radius: 8px;
+  transition: height 0.3s ease-in-out;
+  transform: scale(1);
+}
+
+.image:focus,
+.image:hover {
+  height: 500px;
+  transform: scale(1);
+}
+
+.textual {
+  font-size: 14px;
+}
+
+.footer-ul > li {
+  font-size: 16px;
+ }
+
+}
+
+@media only screen and (max-width: 400px) {
+  
+  .navbar > ul {
+    flex-direction: column;
+    background-color: black;
+    gap: 15px;
+    margin-top: 45px;
+   }
+
+   .navbar > ul > li {
+    font-size: 18px;
+   }
+
+   .navbar > ul > li > a {
+    color: white;
+    display: none;
+   }
+
+   .navbar > ul > li > h1 {
+    color: white;
+    font-size: 38px;
+    padding-top: 80px;
+   }
+
+   #about {
+    margin-top: 200px;
+   }
+
+   .textual {
+    font-size: 14px;
+   }
+
+  .grid-container {
+    grid-template-columns: repeat(1, 250px);
+    grid-template-rows: repeat(1, 250px);
+    gap: 1rem;
+    margin-left: 30px;
+}
+
+.image {
+  height: 350px;
+  width: 280px;
+  border-radius: 8px;
+  transition: height 0.3s ease-in-out;
+  transform: scale(1);
+}
+
+.image:focus,
+.image:hover {
+  height: 430px;
+  transform: scale(1)
+}
+
+.footer-ul {
+  font-size: 14px;
+}
+
+}
+
+@media only screen and (max-width: 305px) {
+
+  .navbar > ul {
+    height: auto;
+   }
+
+   .navbar > ul > li {
+    font-size: 16px;
+   }
+
+   .navbar > ul > li > h1 {
+    color: white;
+    font-size: 32px;
+    padding-top: 70px;
+   }
+
+   .navbar > ul > li > a {
+    color: white;
+    display: none;
+   }
+
+   .textual {
+    font-size: 12px;
+   }
+
+  .grid-container {
+    grid-template-columns: repeat(1, 250px);
+    grid-template-rows: repeat(1, 250px);
+    gap: 1rem;
+    margin-left: 20px;
+}
+
+.image {
+  height: 320px;
+  width: 230px;
+  border-radius: 8px;
+  transition: height 0.3s ease-in-out;
+}
+
+.image:focus,
+.image:hover {
+  height: 350px;
+  transform: scale(1);
+}
+
+.footer-ul > li {
+  font-size: 12px;
+ }
+
+}
