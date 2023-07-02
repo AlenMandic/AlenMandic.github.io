@@ -281,13 +281,14 @@ font-size: 50px;
   height: 400px;
   width: 320px;
   border-radius: 8px;
-  transition: height 0.3s ease-in-out;
+  transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
   transform: scale(1);
 }
 
 .image:focus,
 .image:hover {
-  height: 500px;
+  height: 550px;
+  width: 400px;
   transform: scale(1);
 }
 
@@ -370,13 +371,14 @@ font-size: 50px;
   height: 400px;
   width: 320px;
   border-radius: 8px;
-  transition: height 0.3s ease-in-out;
+  transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
   transform: scale(1);
 }
 
 .image:focus,
 .image:hover {
-  height: 500px;
+  height: 520px;
+  width: 390px;
   transform: scale(1);
 }
 
@@ -387,6 +389,21 @@ font-size: 50px;
 .footer-ul > li {
   font-size: 16px;
  }
+
+}
+
+@media only screen and (max-width: 460px) {
+  .image {
+    height: 380px;
+    width: 300px;
+ }
+
+ .image:focus,
+.image:hover {
+  height: 480px;
+  width: 320px;
+  transform: scale(1);
+}
 
 }
 
@@ -430,16 +447,17 @@ font-size: 50px;
 }
 
 .image {
-  height: 350px;
-  width: 280px;
+  height: 340px;
+  width: 260px;
   border-radius: 8px;
-  transition: height 0.3s ease-in-out;
+  transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
   transform: scale(1);
 }
 
 .image:focus,
 .image:hover {
   height: 430px;
+  width: 280px;
   transform: scale(1)
 }
 
@@ -482,15 +500,16 @@ font-size: 50px;
 }
 
 .image {
-  height: 320px;
-  width: 230px;
+  height: 280px;
+  width: 200px;
   border-radius: 8px;
-  transition: height 0.3s ease-in-out;
+  transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
 }
 
 .image:focus,
 .image:hover {
-  height: 350px;
+  height: 320px;
+  width: 230px;
   transform: scale(1);
 }
 
