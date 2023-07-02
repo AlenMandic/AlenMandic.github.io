@@ -50,15 +50,11 @@ window.addEventListener("resize", () => {
     }
 })
 
-// mobile touches/scrolling
+// activate and use touch scrolling for our horizontal scroll gallery, if it exists.
 let touchStartX = 0;
 let touchMoveX = 0;
 
 const scrollSpeedFactor = 0.2;
-
-scrollContainer.addEventListener("touchstart", handleTouchStart)
-scrollContainer.addEventListener("touchmove", handleTouchMove)
-scrollContainer.addEventListener("touchend", handleTouchEnd)
 
 function handleTouchStart(e) {
     touchStartX = e.touches[0].clientX;
@@ -75,6 +71,29 @@ function handleTouchEnd() {
     touchStartX = 0;
     touchMoveX = 0;
 }
+
+// mobile touches/scrolling for when our horizontal scroll gallery exists. Disable otherwise as it breaks scrolling through the gallery.
+if(window.innerWidth < 800) {
+    scrollContainer.addEventListener("touchstart", handleTouchStart)
+    scrollContainer.addEventListener("touchmove", handleTouchMove)
+    scrollContainer.addEventListener("touchend", handleTouchEnd)
+} else {
+    scrollContainer.removeEventListener("touchstart", handleTouchStart)
+    scrollContainer.removeEventListener("touchmove", handleTouchMove)
+    scrollContainer.removeEventListener("touchend", handleTouchEnd)
+}
+
+window.addEventListener("resize", () => {
+    if(window.innerWidth < 800) {
+    scrollContainer.addEventListener("touchstart", handleTouchStart)
+    scrollContainer.addEventListener("touchmove", handleTouchMove)
+    scrollContainer.addEventListener("touchend", handleTouchEnd)
+    } else {
+    scrollContainer.removeEventListener("touchstart", handleTouchStart)
+    scrollContainer.removeEventListener("touchmove", handleTouchMove)
+    scrollContainer.removeEventListener("touchend", handleTouchEnd)
+    }
+})
 
 // Detect when the "about" section comes into view using intersection observer -> (if about.isIntersecting) { do animation }
 const aboutSection = document.querySelector("#about");
