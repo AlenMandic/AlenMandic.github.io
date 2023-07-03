@@ -98,16 +98,32 @@ window.addEventListener("resize", () => {
 // Detect when the "about" section comes into view using intersection observer -> (if about.isIntersecting) { do animation }
 const aboutSection = document.querySelector("#about");
 
-const observer = new IntersectionObserver(entries => {
+const observer_about = new IntersectionObserver(entries => {
     // counts everything currently in view and constantly updates
     entries.forEach(entry => {
 
         // when whatever we observe appears in visible view:
         if(entry.isIntersecting) {
             entry.target.classList.add("fade-in");
-            observer.unobserve(entry.target);  // when it appears in view once, we stop observing for it.
+            observer_about.unobserve(entry.target);  // when it appears in view once, we stop observing for it.
         }
     })
 })
 
-observer.observe(aboutSection);  // set our "about-section" as my entry.target
+// same thing for our contact form
+const form = document.querySelector("#detect-form");
+
+const observer_form = new IntersectionObserver(entries => {
+    // counts everything currently in view and constantly updates
+    entries.forEach(entry => {
+
+        // when whatever we observe appears in visible view:
+        if(entry.isIntersecting) {
+            entry.target.classList.add("fade-in");
+            observer_form.unobserve(entry.target);  // when it appears in view once, we stop observing for it.
+        }
+    })
+})
+
+observer_about.observe(aboutSection);
+observer_form.observe(form);
