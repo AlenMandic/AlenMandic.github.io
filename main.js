@@ -28,27 +28,8 @@ images.forEach(container => {
         })
 })
 
-// mobile breakpoints turn image gallery into a horizontal scrollbar. Handling scroll and mobile touch scrolling below.
+// mobile breakpoints turn image gallery into a horizontal scrollbar. Handling mobile touch scrolling below.
 const scrollContainer = document.querySelector(".grid-container");
-
-function handleHorizontalScroll(e) {
-    e.preventDefault();
-    scrollContainer.scrollLeft += e.deltaY;
-}
-
-// making sure horizontal scrolling is only enabled on mobile breakpoints.
-if(window.innerWidth > 550) {
-    scrollContainer.removeEventListener("wheel", handleHorizontalScroll);
-}
-
-// do the same thing but on every window resize detection
-window.addEventListener("resize", () => {
-    if(window.innerWidth > 550) {
-        scrollContainer.removeEventListener("wheel", handleHorizontalScroll);
-    } else {
-        scrollContainer.addEventListener("wheel", handleHorizontalScroll)
-    }
-})
 
 // activate and use touch scrolling for our horizontal scroll gallery, if it exists.
 let touchStartX = 0;
