@@ -359,7 +359,7 @@ input[data-autocompleted] {
 }
 
 #about {
-  margin-top: 320px;
+  margin-top: 150px;
 }
 
 .headshot {
@@ -525,16 +525,16 @@ input[data-autocompleted] {
 
    .navbar > ul > li > h1 {
     color: white;
-    font-size: 38px;
+    font-size: 30px;
     padding-top: 80px;
    }
 
    #about {
-    margin-top: 200px;
+    margin-top: 110px;
    }
 
    .textual {
-    font-size: 14px;
+    font-size: 10px;
    }
 
   .grid-container {
@@ -545,8 +545,8 @@ input[data-autocompleted] {
 }
 
 .image {
-  height: 340px;
-  width: 260px;
+  height: 300px;
+  width: 210px;
   border-radius: 8px;
   transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
   transform: scale(1);
@@ -554,8 +554,8 @@ input[data-autocompleted] {
 
 .image:focus,
 .image:hover {
-  height: 430px;
-  width: 280px;
+  height: 400px;
+  width: 230px;
   transform: scale(1)
 }
 
@@ -587,7 +587,7 @@ input[data-autocompleted] {
    }
 
    .textual {
-    font-size: 12px;
+    font-size: 9px;
    }
 
   .grid-container {
