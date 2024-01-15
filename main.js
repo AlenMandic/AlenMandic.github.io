@@ -35,7 +35,7 @@ const scrollContainer = document.querySelector(".grid-container");
 let touchStartX = 0;
 let touchMoveX = 0;
 
-const scrollSpeedFactor = 0.2;
+const scrollSpeedFactor = 0.1;
 
 function handleTouchStart(e) {
     touchStartX = e.touches[0].clientX;
